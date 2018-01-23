@@ -36,7 +36,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 	},
 	assign_to_seat_group = {"dstand"},
 	visual_size = {x=1, y=1},
-	wagon_span=1.85,
+	wagon_span=1.95,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
 	update_animation=function(self, velocity)
 		if self.old_anim_velocity~=advtrains.abs_ceil(velocity) then
@@ -71,7 +71,8 @@ advtrains.register_wagon("diesel_lokomotive", {
 			attached = self.object,
 		})
 	end,
-	drops={"advtrains:engine_diesel"},
+	drops={"advtrains:diesel_lokomotive"},
+      horn_sound = "advtrains_engine_diesel_horn"
 }, S("diesel Engine"), "advtrains_engine_diesel_inv.png")
 
 advtrains.register_wagon("wagon_gravel", {
@@ -81,7 +82,7 @@ advtrains.register_wagon("wagon_gravel", {
 	max_speed=10,
 	seats = {},
 	visual_size = {x=1, y=1},
-	wagon_span=1.6,
+	wagon_span=1.55,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_gravel"},
 	has_inventory = true,
@@ -103,7 +104,7 @@ advtrains.register_wagon("wagon_track", {
 	max_speed=10,
 	seats = {},
 	visual_size = {x=1, y=1},
-	wagon_span=1.6,
+	wagon_span=1.55,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_track"},
 	has_inventory = true,
@@ -127,7 +128,7 @@ advtrains.register_wagon("wagon_lava", {
 	max_speed=10,
 	seats = {},
 	visual_size = {x=1, y=1},
-	wagon_span=1.6,
+	wagon_span=1.55,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_lava"},
 	has_inventory = true,
@@ -150,7 +151,7 @@ advtrains.register_wagon("wagon_tree", {
 	max_speed=10,
 	seats = {},
 	visual_size = {x=1, y=1},
-	wagon_span=1.6,
+	wagon_span=1.55,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_tree"},
 	has_inventory = true,
