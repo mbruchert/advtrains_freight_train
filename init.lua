@@ -17,14 +17,12 @@ advtrains.register_wagon("diesel_lokomotive", {
 			name=S("Driver Stand (left)"),
 			attach_offset={x=-3, y=12, z=-2},
 			view_offset={x=0, y=3, z=0},
-			driving_ctrl_access=true,
 			group = "dstand",
 		},
 -- 		{
 -- 			name=S("Driver Stand (right)"),
 -- 			attach_offset={x=5, y=10, z=-10},
 -- 			view_offset={x=0, y=6, z=0},
--- 			driving_ctrl_access=true,
 -- 			group = "dstand",
 -- 		},
 	},
@@ -32,6 +30,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 		dstand={
 			name = "Driver Stand",
 			access_to = {},
+			driving_ctrl_access=true,
 		},
 	},
 	assign_to_seat_group = {"dstand"},
@@ -73,7 +72,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 	end,
 	drops={"advtrains:diesel_lokomotive"},
       horn_sound = "advtrains_engine_diesel_horn"
-}, S("diesel Engine"), "advtrains_engine_diesel_inv.png")
+}, S("Diesel Engine"), "advtrains_engine_diesel_inv.png")
 
 advtrains.register_wagon("wagon_gravel", {
 	mesh="advtrains_wagon_gravel.b3d",
@@ -95,7 +94,7 @@ advtrains.register_wagon("wagon_gravel", {
 	inventory_list_sizes = {
 		box=8*6,
 	},
-}, S("gravel Wagon"), "advtrains_wagon_gravel_inv.png")
+}, S("Gravel Wagon"), "advtrains_wagon_gravel_inv.png")
 
 advtrains.register_wagon("wagon_track", {
 	mesh="advtrains_wagon_stick.b3d",
@@ -117,7 +116,7 @@ advtrains.register_wagon("wagon_track", {
 	inventory_list_sizes = {
 		box=8*6,
 	},
-}, S("track wagon"), "advtrains_wagon_track_inv.png")
+}, S("Track Wagon"), "advtrains_wagon_track_inv.png")
 
 
 
@@ -141,7 +140,7 @@ advtrains.register_wagon("wagon_lava", {
 	inventory_list_sizes = {
 		box=8*6,
 	},
-}, S("lava wagon"), "advtrains_wagon_lava_inv.png")
+}, S("Lava Wagon"), "advtrains_wagon_lava_inv.png")
 
 
 advtrains.register_wagon("wagon_tree", {
@@ -164,4 +163,4 @@ advtrains.register_wagon("wagon_tree", {
 	inventory_list_sizes = {
 		box=8*6,
 	},
-}, S("tree wagon"), "advtrains_wagon_tree_inv.png")
+}, S("Tree Wagon"), "advtrains_wagon_tree_inv.png")
