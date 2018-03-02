@@ -14,28 +14,33 @@ advtrains.register_wagon("diesel_lokomotive", {
 	max_speed=10,
 	seats = {
 		{
-			name=S("Driver Stand (left)"),
-			attach_offset={x=-3, y=12, z=-2},
-			view_offset={x=0, y=3, z=0},
+			name = S("Driver Stand (left)"),
+			attach_offset = {x=-3, y=12, z=-2},
+			view_offset = {x=-4, y=3, z=0},
 			group = "dstand",
 		},
--- 		{
--- 			name=S("Driver Stand (right)"),
--- 			attach_offset={x=5, y=10, z=-10},
--- 			view_offset={x=0, y=6, z=0},
--- 			group = "dstand",
--- 		},
+		{
+			name = S("Trainee Seat (right)"),
+			attach_offset = {x=3, y=12, z=-2},
+			view_offset = {x=4, y=3, z=0},
+			group = "tseat",
+		},
 	},
 	seat_groups = {
-		dstand={
+		dstand = {
 			name = "Driver Stand",
-			access_to = {},
-			driving_ctrl_access=true,
+			access_to = {"tseat"},
+			driving_ctrl_access = true,
+		},
+		tseat = {
+			name = "Trainee Seat",
+			access_to = {"dstand"},
+			driving_ctrl_access = false,
 		},
 	},
 	assign_to_seat_group = {"dstand"},
 	visual_size = {x=1, y=1},
-	wagon_span=1.95,
+	wagon_span = 1.95,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
 	update_animation=function(self, velocity)
 		if self.old_anim_velocity~=advtrains.abs_ceil(velocity) then
@@ -71,7 +76,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 		})
 	end,
 	drops={"advtrains:diesel_lokomotive"},
-      horn_sound = "advtrains_engine_diesel_horn"
+      horn_sound = "advtrains_engine_diesel_horn",
 }, S("Diesel Engine"), "advtrains_engine_diesel_inv.png")
 
 advtrains.register_wagon("wagon_gravel", {
