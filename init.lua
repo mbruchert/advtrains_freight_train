@@ -38,7 +38,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 			driving_ctrl_access = false,
 		},
 	},
-	assign_to_seat_group = {"dstand"},
+	assign_to_seat_group = {"dstand", "tseat"},
 	visual_size = {x=1, y=1},
 	wagon_span = 1.95,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
