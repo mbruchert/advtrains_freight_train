@@ -76,35 +76,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 		})
 	end,
 	drops={"advtrains:diesel_lokomotive"},
-      horn_sound = "advtrains_engine_diesel_horn",
-	custom_on_velocity_change = function(self, velocity, old_velocity, dtime)
-		if not velocity or not old_velocity then return end
-		if old_velocity == 0 and velocity > 0 then
-			if self.sndh then
-				minetest.sound_stop(self.sndh)
-			end
-			self.sndh = minetest.sound_play({name="advtrains_engine_diesel_sound", gain=0.5}, {object = self.object})
-		end
-		
--- 		if velocity < 2 and (old_velocity >= 2 or old_velocity == velocity) and not self.sound_arrive_handle then
--- 			--self.sound_arrive_handle = minetest.sound_play("advtrains_subway_arrive", {object = self.object})
--- 		elseif (velocity > old_velocity) and self.sound_arrive_handle then
--- 			minetest.sound_stop(self.sound_arrive_handle)
--- 			self.sound_arrive_handle = nil
--- 		end
--- 		if velocity > 0 and (self.sound_loop_tmr or 0)<=0 then
--- 			self.sound_loop_handle = minetest.sound_play({name="advtrains_engine_diesel_sound", gain=0.3}, {object = self.object})
--- 			self.sound_loop_tmr=3
--- 		elseif velocity>0 then
--- 			self.sound_loop_tmr = self.sound_loop_tmr - dtime
--- 		elseif velocity==0 then
--- 			if self.sound_loop_handle then
--- 				minetest.sound_stop(self.sound_loop_handle)
--- 				self.sound_loop_handle = nil
--- 			end
--- 			self.sound_loop_tmr=0
--- 		end
-	end,
+	horn_sound = "advtrains_engine_diesel_horn",
 }, S("Diesel Engine"), "advtrains_engine_diesel_inv.png")
 
 advtrains.register_wagon("wagon_gravel", {
