@@ -15,13 +15,13 @@ advtrains.register_wagon("diesel_lokomotive", {
 	seats = {
 		{
 			name = S("Driver Stand (left)"),
-			attach_offset = {x=-3, y=12, z=-2},
+			attach_offset = {x=-3, y=2, z=-2},
 			view_offset = {x=-4, y=3, z=0},
 			group = "dstand",
 		},
 		{
 			name = S("Trainee Seat (right)"),
-			attach_offset = {x=3, y=12, z=-2},
+			attach_offset = {x=3, y=2, z=-2},
 			view_offset = {x=4, y=3, z=0},
 			group = "tseat",
 		},
@@ -53,8 +53,8 @@ advtrains.register_wagon("diesel_lokomotive", {
 			amount = 10,
 			time = 0,
 		--  ^ If time is 0 has infinite lifespan and spawns the amount on a per-second base
-			minpos = {x=0, y=2, z=1.2},
-			maxpos = {x=0, y=2, z=1.2},
+			minpos = {x=0, y=2.5, z=0.9},
+			maxpos = {x=0, y=2.5, z=0.9},
 			minvel = {x=-0.2, y=1.8, z=-0.2},
 			maxvel = {x=0.2, y=2, z=0.2},
 			minacc = {x=0, y=-0.1, z=0},
@@ -76,7 +76,7 @@ advtrains.register_wagon("diesel_lokomotive", {
 		})
 	end,
 	drops={"advtrains:diesel_lokomotive"},
-      horn_sound = "advtrains_engine_diesel_horn",
+	horn_sound = "advtrains_engine_diesel_horn",
 }, S("Diesel Engine"), "advtrains_engine_diesel_inv.png")
 
 advtrains.register_wagon("wagon_gravel", {
@@ -90,9 +90,9 @@ advtrains.register_wagon("wagon_gravel", {
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_gravel"},
 	has_inventory = true,
-	get_inventory_formspec = function(self)
+	get_inventory_formspec = function(self, pname, invname)
 		return "size[8,11]"..
-			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
+			"list["..invname..";box;0,0;8,6;]"..
 			"list[current_player;main;0,7;8,4;]"..
 			"listring[]"
 	end,
@@ -112,9 +112,9 @@ advtrains.register_wagon("wagon_track", {
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_track"},
 	has_inventory = true,
-	get_inventory_formspec = function(self)
+	get_inventory_formspec = function(self, pname, invname)
 		return "size[8,11]"..
-			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
+			"list["..invname..";box;0,0;8,6;]"..
 			"list[current_player;main;0,7;8,4;]"..
 			"listring[]"
 	end,
@@ -136,9 +136,9 @@ advtrains.register_wagon("wagon_lava", {
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_lava"},
 	has_inventory = true,
-	get_inventory_formspec = function(self)
+	get_inventory_formspec = function(self, pname, invname)
 		return "size[8,11]"..
-			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
+			"list["..invname..";box;0,0;8,6;]"..
 			"list[current_player;main;0,7;8,4;]"..
 			"listring[]"
 	end,
@@ -159,9 +159,9 @@ advtrains.register_wagon("wagon_tree", {
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,1.5,1.0},
 	drops={"advtrains:wagon_tree"},
 	has_inventory = true,
-	get_inventory_formspec = function(self)
+	get_inventory_formspec = function(self, pname, invname)
 		return "size[8,11]"..
-			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
+			"list["..invname..";box;0,0;8,6;]"..
 			"list[current_player;main;0,7;8,4;]"..
 			"listring[]"
 	end,
