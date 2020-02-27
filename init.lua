@@ -15,13 +15,13 @@ advtrains.register_wagon("diesel_lokomotive", {
 	seats = {
 		{
 			name = S("Driver Stand (left)"),
-			attach_offset = {x=-3, y=12, z=-2},
+			attach_offset = {x=-3, y=2, z=-2},
 			view_offset = {x=-4, y=3, z=0},
 			group = "dstand",
 		},
 		{
 			name = S("Trainee Seat (right)"),
-			attach_offset = {x=3, y=12, z=-2},
+			attach_offset = {x=3, y=2, z=-2},
 			view_offset = {x=4, y=3, z=0},
 			group = "tseat",
 		},
